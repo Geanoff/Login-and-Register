@@ -1,0 +1,288 @@
+    
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* background: url('img/fundo2.jpg') center / cover no-repeat; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 800px;
+    height: 550px;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);
+}
+
+.forms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+}
+
+.forms form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 0 30px;
+}
+
+.forms h1 {
+    font-weight: 300;
+    margin-bottom: 30px;
+    pointer-events: none;
+}
+
+.media-social {
+    display: flex;
+    gap: 30px;
+    margin: 10px 0;
+}
+
+.media-social img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.line {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.line::after,
+.line::before {
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 1px;
+    background: #000;
+    left: 0;
+    top: 50%;
+}
+
+.line::before {
+    left: 55%;
+}
+
+/* ========== INPUTS ========== */
+.input-duo {
+    display: flex;
+    gap: 10px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 15px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+
+.input-box i {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.remember label {
+    display: flex;
+    gap: 3px;
+}
+
+.remember a {
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+}
+
+.remember a:hover {
+    color: #0000EE;   
+}
+
+form button {
+    padding: 15px 30px;
+    background: #10a4b4;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: aliceblue;
+    transition: .3s;
+    margin: 30px 0 17px 0;
+}
+
+#login button {
+    margin-bottom: 40px;
+}
+
+form button:hover {
+    background: #2596be;
+    color: #fff;
+}
+
+.form-btn {
+    pointer-events: none;
+}
+
+.form-btn label {
+    color: #0000EE;
+    cursor: pointer;
+    pointer-events: visible;
+}
+
+/* ========== LADO DOS TEXTOS ========== */
+.flip {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to top, #61c2c8, #047997);
+    width: 50%;
+    height: 100%;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 15px 15px 0;
+}
+
+.front,
+.back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    gap: 20px;
+    backface-visibility: hidden;
+}
+
+.flip div label {
+    padding: 10px 25px;
+    border: 2px solid #2596be;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.flip div label:hover {
+    background: #2596be;
+}
+
+/* ========== EFEITOS ========== */
+#check {
+    display: none;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+#check:checked ~ .flip {
+    transform: rotateY(-180deg);
+}
+
+.flip {
+    transition: .5s linear;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+
+.main {
+    perspective: 2000px;
+}
+
+/* ========== RESPONSIVO ========== */
+.form-btn {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .main {
+        max-width: 400px;
+        overflow: hidden;
+    }
+
+    .forms form{
+        width: 100%;
+    }
+
+    .form-btn {
+        display: block;
+    }
+
+    .flip {
+        display: none;
+    }
+
+    #login,
+    #registro {
+        display: none;
+    }
+
+    #check:not(:checked) ~ .forms #login {
+        display: flex;
+        animation: log .5s;
+    }
+
+    #check:checked ~ .forms #registro {
+        display: flex;
+        animation: reg .5s;
+    }
+
+}
+
+@keyframes log {
+    0% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes reg {
+    0% {
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

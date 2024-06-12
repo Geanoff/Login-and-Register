@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="main">
+        <input type="checkbox" id="check">
+        <div class="forms">
+            <form id="login">
+                <h1>Login</h1>
+                <div class="media-social">
+                    <a href="https://accounts.google.com"><img src="img/google.png" alt="Google-Logo"></a>
+                    <a href="https://facebook.com"><img src="img/facebook.png" alt="Facebook-Logo"></a>
+                    <a href="https://instagram.com"><img src="img/instagram.png" alt="Instagram-Logo"></a>
+                </div>
+                <div class="line">ou</div>
+                <div class="input-box">
+                    <input type="text" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Senha">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="remember">
+                    <label for="lembrar-log">
+                        <input type="checkbox" id="lembrar-log">
+                        Me deixar conectado
+                    </label>
+                    <a href="#">Esqueci a senha ></a>
+                </div>
+                <button>ENTRAR</button>
+                <p class="form-btn">Não tem conta? <label for="check">Cadastro</label></p>
+            </form>
+
+            <form id="registro">
+                <h1>Cadastro</h1>
+                <div class="media-social">
+                    <a href="https://accounts.google.com"><img src="img/google.png" alt="Google-Logo"></a>
+                    <a href="https://facebook.com"><img src="img/facebook.png" alt="Facebook-Logo"></a>
+                    <a href="https://instagram.com"><img src="img/instagram.png" alt="Instagram-Logo"></a>
+                </div>
+                <div class="line">ou</div>
+                <div class="input-duo"> 
+                    <div class="input-box">
+                        <input type="text" placeholder="Nome">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Sobrenome">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Senha">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="remember">
+                    <label for="lembrar-reg">
+                        <input type="checkbox" id="lembrar-reg">
+                        Lembrar de mim
+                    </label>
+                </div>
+                <button>ENVIAR</button>
+                <p class="form-btn">Já possui conta? <label for="check">Login</label></p>
+            </form>
+        </div>
+        <div class="flip">
+            <div class="front">
+                <h1>Não tem conta?</h1>
+                <p>Crie sua conta agora para benefícios exclusivos!</p>
+                <label for="check">CADASTRO</label>
+            </div>
+            <div class="back">
+                <h1>Já possui conta?</h1>
+                <p>Explore benefícios exclusivos com sua conta existente agora!</p>
+                <label for="check">LOGIN</label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
